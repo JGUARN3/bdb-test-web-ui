@@ -1,0 +1,8 @@
+<div #container id="overlay-root" class="container">
+    <bdb-ml-xcenter-login-form
+            (infoSubmit)="login($event)"
+            elements='[
+            {"component":"bdb-at-input","name":"email","props":{"idEl":"email","name":"email","label":"Correo","placeholder":"Correo","type":"TEXT","status":"ENABLED","required":"true","message":"Mensaje de error o ayuda"}},
+            {"component":"bdb-at-input","name":"password","props":{"idEl":"password","name":"password","label":"Contraseña","placeholder":"Contraseña","type":"PASSWORD","status":"ENABLED","required":"true","message":"Mensaje de error o ayuda"}},
+            {"component":"bdb-at-check-button","name":"check1","props":{"idEl":"check1","name":"check1","valuesToCheck":[{"labelHtml":"Acepto <span class=\"bdb-at-checkbox__content__label--link\" onclick=\"test()\">Términos y condiciones ›</span>","value":"lblnormal","isChecked":"false","name":"check1"}]}}]'></bdb-ml-xcenter-login-form>
+</div>

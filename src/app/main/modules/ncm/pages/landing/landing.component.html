@@ -1,0 +1,138 @@
+<div #container id="overlay-root" class="scrollable-content">
+    <!--Header section-->
+    <div id="header" class="header__container">
+        <bdb-ml-header-landing
+                options='[ { "id": "0", "text": "Colaboradores", "value": "soluciones" }, { "id": "1", "text": "Gestión NCM", "value": "access" }]'
+                show-button=500
+                label-button="Registrar Colaborador"
+                id-el="header-landing">
+        </bdb-ml-header-landing>
+    </div>
+    <!--Introductory section-->
+    <div id="introductory" class="intro">
+        <div class="intro__text" id="1">
+            <div class="intro__text--title">
+                <p>Gestiona de forma optimizada</p>
+            </div>
+            <div class="intro__text--subtitle">
+                <span>New Collaborator Management</span>
+            </div>
+            <div class="intro--btn-contact">
+                <button id="btn-contact-id" class='bdb-at-btn bdb-at-btn--primary bdb-at-btn--lg'
+                        (click)="redirect()">Iniciar Gestión <span>›</span>
+                </button>
+            </div>
+            <div class="intro__text--text">
+                        <span>Sólo para colaboradores del Banco de Bogotá.
+                        </span>
+            </div>
+        </div>
+        <div class="intro__picture">
+            <img src="./assets/images/logo-er.png" class="intro__picture-img" style="height: 440px" alt="hero-rock">
+        </div>
+    </div>
+
+    <!--Means of payments section-->
+    <div id="means" class="means__container">
+        <div id="0" class="means__container-title">
+            <div class="means__text--title">Accesos y Recursos</div>
+        </div>
+        <div class="means">
+            <div class="means__container-management">
+                <div class="means-item">
+                    <div class="means__content-img">
+                        <span class="ico-padlock-unlock"></span>
+                    </div>
+                    <div class="means__content-dsc">
+                        <p class="means__text--title-item">SOLICITUD ACCESOS</p>
+                        <p class="means__text--p-item">Solicita permisos para las aplicaciones</p>
+                        <a class="means__text--a-item" (click)="redirect()" >Solicitar ›
+                        </a>
+                    </div>
+                </div>
+                <div class="means-item">
+                    <div class="means__content-img">
+                        <span class="ico-document-check"></span>
+                    </div>
+                    <div class="means__content-dsc">
+                        <p class="means__text--title-item">EQUIPO ASIGNADO</p>
+                        <p class="means__text--p-item">Revisar equipo asignado</p>
+                        <a class="means__text--a-item" (click)="redirect()">Consultar ›
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Footer section-->
+    <div class="footer">
+        <div class="footer__products-bank">
+            <div class="footer__title-digital">Productos digitales</div>
+            <div class="footer__link-basic">
+                <a id="lnk-footer-1" class="footer__link" rel="noopener"
+                   href="https://digital.bancodebogota.com/cuenta-ahorros/"
+                   target="_blank">
+                    <span class="footer__link-info">Cuenta de ahorro</span>
+                </a>
+                <a id="lnk-footer-2" class="footer__link2" rel="noopener"
+                   href="https://digital.bancodebogota.com/tc-digital/"
+                   target="_blank">
+                    <span class="footer__link-info">Tarjeta de Crédito</span>
+                </a>
+                <a id="lnk-footer-3" class="footer__link2" rel="noopener"
+                   href="https://viviendadigital.bancodebogota.com/"
+                   target="_blank">
+                    <span class="footer__link-info">Cr&eacute;dito de Vivienda</span>
+                </a>
+                <a id="lnk-footer-4" class="footer__link2" rel="noopener"
+                   href="https://digital.bancodebogota.co/libranza/"
+                   target="_blank">
+                    <span class="footer__link-info">Cr&eacute;dito de Libranza</span>
+                </a>
+                <a id="lnk-footer-5" class="footer__link2" rel="noopener"
+                   href="https://digital.bancodebogota.co/credito/"
+                   target="_blank">
+                    <span class="footer__link-info">Cr&eacute;dito Libre Destino</span>
+                </a>
+                <a id="lnk-footer-6" class="footer__link2" rel="noopener"
+                   href="https://digital.bancodebogota.com/cdt/"
+                   target="_blank">
+                    <span class="footer__link-info">CDT</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer__products-cb">
+            <div class="footer__cb">
+                <div class="footer__title-digital">Credibanco</div>
+                <div class="footer__link-basic">
+                    <a id="lnk-footer-7" class="footer__link" rel="noopener"
+                       href="https://www.credibanco.com/"
+                       target="_blank">
+                        <span class="footer__link-info">Página principal</span>
+                    </a>
+                </div>
+                <div class="footer__title-digital">Descarga nuestra app</div>
+                <div class="footer__icon">
+                    <a id="lnk-footer-8" rel="noopener"
+                       href="https://play.google.com/store/apps/details?xd_co_f=NTQ0NGUyMjUtYTFlNy00MDRiLThjY2YtM2NlM2U2NzFlYzgz&id=com.bancodebogota.bancamovil"
+                       target="_blank">
+                    </a>
+                    <a id="lnk-footer-9" rel="noopener"
+                       href="https://itunes.apple.com/co/app/banco-de-bogot%C3%A1/id741196012?mt=8" target="_blank">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__contact-div">
+            <div class="footer__info" style="float: left; ">Para m&aacute;s informaci&oacute;n puedes contactarnos en
+                nuestra Servil&iacute;nea: <span class="footer__info-bold">Bogot&aacute;</span> 382 0000, <span
+                        class="footer__info-bold">Medell&iacute;n</span> 576 4330, <span
+                        class="footer__info-bold">Cali</span> 898 0077,
+                <span class="footer__info-bold">Barranquilla</span> 350 4300, <span class="footer__info-bold">Nivel nacional</span>
+                018000 518 877.
+            </div>
+        </div>
+    </div>
+</div>

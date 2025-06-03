@@ -1,0 +1,13 @@
+<div #container id="overlay-root" class="container">
+    <div *ngIf="collaboratorFlow" class="info">
+        <app-new></app-new>
+    </div>
+    <div *ngIf="accessFlow" class="info">
+        <app-access></app-access>
+    </div>
+    <div *ngIf="equipmentFlow" class="info">
+        <app-equipment></app-equipment>
+    </div>
+    <bdb-ml-sidebar (sidebarEmitter)="contentView($event)" [itemsSidebar]="sidebarItems">
+    </bdb-ml-sidebar>
+</div>

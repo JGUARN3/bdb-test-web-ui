@@ -1,0 +1,9 @@
+<div class="sherpa-typography-heading-1" style="margin-bottom: 20px;">Solicitudes de Accesos</div>
+<div class="intro">
+    <bdb-ml-dynamic-table
+            column-table='[{"colName":"", "control":"id"},{"colName":"Nombre", "control":"text"},
+                {"colName":"Correo", "control":"text"},{"colName":"Fecha Creación", "control":"date"},
+                {"colName":"Area", "control":"text"},{"colName": "Estado", "control":"tag"},
+                {"colName": "Eliminar", "control":"action"}]'
+            [rowTable]="listCollaborators" (buttonClick)="action($event)"></bdb-ml-dynamic-table>
+</div>

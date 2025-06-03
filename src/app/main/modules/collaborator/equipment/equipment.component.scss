@@ -1,0 +1,25 @@
+@use 'styles';
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 20px;
+  &_list{
+    margin-left: 20px;
+    width: 200px;
+  }
+  &_form{
+    width: 500px;
+    &_item{
+      margin-top: var(--sherpa-spacing-2);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .intro {
+    display: flex;
+    flex-direction: column;
+  }
+}

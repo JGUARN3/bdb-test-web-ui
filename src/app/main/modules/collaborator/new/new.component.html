@@ -1,0 +1,32 @@
+<div class="sherpa-typography-heading-1" style="margin-bottom: 20px;">Nuevos Colaboradores</div>
+<div class="intro">
+    <div class="intro_form">
+        <div class="sherpa-typography-heading-5">Registrar Colaborador</div>
+        <div class="intro_form_item">
+            <bdb-at-input class="intro_form_item" label="Nombre" placeholder="Nombre" type="TEXT" status="ENABLED"
+                          required="true" message="" view-mode (atInputChanged)="setName($event)"></bdb-at-input>
+        </div>
+        <div class="intro_form_item">
+            <bdb-at-input class="intro_form_item" label="Email" placeholder="Email" type="EMAIL" status="ENABLED"
+                          required="true" message="" (atInputChanged)="setEmail($event)"></bdb-at-input>
+        </div>
+        <div class="intro_form_item">
+            <bdb-at-dropdown class="intro_form_item" name="1" label="Area" status="ENABLED" placeholder="Seleccione"
+                             [options]="listBox" (elementSelectedAtom)="setArea($event)"></bdb-at-dropdown>
+        </div>
+        <div class="intro_form_item">
+            <button (click)="saveCollaborator()" [disabled]="disabled"
+                    class='bdb-at-btn  bdb-at-btn--primary bdb-at-btn--lg '>Guardar
+            </button>
+        </div>
+    </div>
+    <div class="intro_list">
+        <div class="sherpa-typography-heading-5">Listado Colaboradores</div>
+        <bdb-ml-dynamic-table
+                column-table='[{"colName":"", "control":"id"},{"colName":"Nombre", "control":"text"},
+                {"colName":"Correo", "control":"text"},{"colName":"Fecha Creación", "control":"date"},
+                {"colName":"Area", "control":"text"},{"colName": "Estado", "control":"tag"},
+                {"colName": "Eliminar", "control":"action"}]'
+                [rowTable]="listCollaborators" (buttonClick)="action($event)"></bdb-ml-dynamic-table>
+    </div>
+</div>

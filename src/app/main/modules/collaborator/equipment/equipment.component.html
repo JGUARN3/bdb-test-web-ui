@@ -1,0 +1,27 @@
+<div class="sherpa-typography-heading-1" style="margin-bottom: 20px;">Equipos asignados</div>
+<div class="intro">
+    <div class="intro_list">
+        <bdb-ml-active-selector [text]="available" disabled="true"></bdb-ml-active-selector>
+    </div>
+    <div class="intro_form">
+        <div class="intro_form_item">
+            <bdb-at-dropdown class="intro_form_item" name="1" label="Usuario" status="ENABLED" placeholder="Seleccione"
+                             [options]="listCollaborators" (elementSelectedAtom)="setUser($event)"></bdb-at-dropdown>
+        </div>
+        <div class="intro_form_item">
+            <bdb-at-dropdown class="intro_form_item" name="1" label="Equipo" status="ENABLED" placeholder="Seleccione"
+                             [options]="listBox" (elementSelectedAtom)="setEquipment($event)"></bdb-at-dropdown>
+        </div>
+        <div class="intro_form_item">
+            <button (click)="saveCollaboratorEquipment()" [disabled]="disabled"
+                    class='bdb-at-btn  bdb-at-btn--primary bdb-at-btn--lg '>Guardar
+            </button>
+        </div>
+    </div>
+</div>
+<bdb-ml-dynamic-table
+        column-table='[{"colName":"", "control":"id"},{"colName":"Nombre", "control":"text"},
+                {"colName":"Correo", "control":"text"},{"colName":"Equipo", "control":"text"},
+                {"colName":"Serial", "control":"text"},{"colName": "Estado", "control":"tag"},
+                {"colName": "Eliminar", "control":"action"}]'
+        [rowTable]="listEquipments" (buttonClick)="action($event)"></bdb-ml-dynamic-table>

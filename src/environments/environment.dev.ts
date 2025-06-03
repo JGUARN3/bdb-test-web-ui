@@ -1,0 +1,15 @@
+export const environment = {
+  tag: 'dev',
+  production: false,
+  endpoint: 'http://localhost:8001',
+  apiLogin: '/request/V1/validate',
+  getArea: '/request/V1/area',
+  getEquipments: '/request/V1/equipments',
+  getCollaborators: '/request/V1/collaborators',
+  newCollaborator: '/request/V1/create-collaborator',
+  updateCollaborators: '/request/V1/update-collaborator',
+  deleteCollaborator: '/request/V1/delete-collaborator',
+  getEquipmentsList: '/request/V1/list-equipments',
+  newCollaboratorEquipments: '/request/V1/create-equipment',
+  deleteEquipments: '/request/V1/delete-equipment',
+};

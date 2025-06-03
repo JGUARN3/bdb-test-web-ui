@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'assets/mfe-bdb-webcomponents.scss';
+@use 'assets/mfe-fonts.scss';
+@use 'assets/mfe-icons.scss';
+:host {
+  all: initial;
+}
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+.scrollable-content {
+  height: calc(100vh - 1rem);
+  overflow-y: scroll;
+  position: absolute;
+  width: 100%;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
