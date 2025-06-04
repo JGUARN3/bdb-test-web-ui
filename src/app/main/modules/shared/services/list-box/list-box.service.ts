@@ -26,4 +26,22 @@ export class ListBoxService {
       headers
     );
   }
+
+  public getApplication(headers: HeadersInit): Observable<any> {
+    const url = `${environment.endpoint}${environment.getApplications}`;
+    return this.httpRequest.request(
+      url,
+      'get',
+      headers
+    );
+  }
+
+  public getPermission(headers: HeadersInit): Observable<any> {
+    const url = `${environment.endpoint}${environment.getPermissions}`;
+    return this.httpRequest.request(
+      url,
+      'get',
+      headers
+    );
+  }
 }

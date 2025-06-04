@@ -5,6 +5,8 @@ export const environment = {
   apiLogin: '/request/V1/validate',
   getArea: '/request/V1/area',
   getEquipments: '/request/V1/equipments',
+  getApplications: '/request/V1/applications',
+  getPermissions: '/request/V1/permissions',
   getCollaborators: '/request/V1/collaborators',
   newCollaborator: '/request/V1/create-collaborator',
   updateCollaborators: '/request/V1/update-collaborator',
@@ -12,4 +14,7 @@ export const environment = {
   getEquipmentsList: '/request/V1/list-equipments',
   newCollaboratorEquipments: '/request/V1/create-equipment',
   deleteEquipments: '/request/V1/delete-equipment',
+  getRequests: '/request/V1/access',
+  insertRequest: '/request/V1/create-access',
+  updateRequest: '/request/V1/update-access',
 };

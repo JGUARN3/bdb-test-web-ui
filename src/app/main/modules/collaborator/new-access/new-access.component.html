@@ -1,0 +1,26 @@
+<div class="sherpa-typography-heading-1" style="margin-bottom: 20px;">Mis Solicitudes de Accesos</div>
+<div class="intro">
+    <div class="intro_form">
+        <div class="sherpa-typography-heading-5">Registrar solicitud</div>
+        <div class="intro_form_item">
+            <bdb-at-dropdown class="intro_form_item" name="1" label="Aplicación" status="ENABLED" placeholder="Seleccione"
+                             [options]="boxApplications" (elementSelectedAtom)="setApp($event)"></bdb-at-dropdown>
+        </div>
+        <div class="intro_form_item">
+            <bdb-at-dropdown class="intro_form_item" name="1" label="Permiso" status="ENABLED" placeholder="Seleccione"
+                             [options]="boxPermissions"(elementSelectedAtom)="setPermission($event)" ></bdb-at-dropdown>
+        </div>
+        <div class="intro_form_item">
+            <button (click)="saveRequest()" [disabled]="disabled"
+                    class='bdb-at-btn  bdb-at-btn--primary bdb-at-btn--lg '>Solicitar
+            </button>
+        </div>
+    </div>
+    <div class="intro_list">
+        <bdb-ml-dynamic-table
+                column-table='[{"colName":"", "control":"id"},{"colName":"Fecha Creación", "control":"date"},
+                {"colName":"Permiso", "control":"text"},{"colName":"Aplicación", "control":"text"},
+                {"colName": "Estado", "control":"tag"}]'
+                [rowTable]="listRequest"></bdb-ml-dynamic-table>
+    </div>
+</div>

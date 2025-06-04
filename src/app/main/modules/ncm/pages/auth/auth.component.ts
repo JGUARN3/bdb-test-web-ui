@@ -70,6 +70,7 @@ export class AuthComponent implements OnInit {
       sessionStorage.setItem('urlAuth', 'authorizer');
       this.router.navigate(['home']);
     } else if (user.role_id == 2) {
+      sessionStorage.setItem('user', JSON.stringify(user));
       sessionStorage.setItem('urlAuthC', 'authorizer');
       this.router.navigate(['home-collaborator']);
     }

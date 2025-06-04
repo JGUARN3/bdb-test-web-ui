@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { ListCollaboratorsService } from "../../shared/services/list-collaborators/list-collaborators.service";
-import { NewCollaboratorsService } from "../../shared/services/new-collaborators/new-collaborators.service";
+import { AccessService } from "../../shared/services/access/access.service";
 
 
 @Component({
@@ -13,83 +12,31 @@ import { NewCollaboratorsService } from "../../shared/services/new-collaborators
 })
 
 export class AccessComponent implements OnInit {
-  listCollaborators = [];
-  disabled = 'FALSE';
-  name: string = '';
-  email: string = '';
-  area: number;
+  listRequest = [];
   headers: HeadersInit = {
     'X-Name': 'NCM',
     'X-Channel': 'Web'
   };
 
-  constructor(
-              private readonly listCollaboratorsService: ListCollaboratorsService,
-              private readonly newCollaboratorsService: NewCollaboratorsService,) {
+  constructor(private readonly accessService: AccessService) {
   }
 
   public ngOnInit(): void {
-    this.load_collaborators();
+    this.load();
   }
 
-  validate_field() {
-    if (this.name !== '' && this.email !== '') {
-      console.log(this.disabled);
-      this.disabled = '';
-    } else {
-      this.disabled = 'FALSE';
-    }
-  }
-
-  setName(e: any) {
-    this.name = e.detail.value;
-    this.validate_field();
-  }
-
-  setEmail(e: any) {
-    this.email = e.detail.value;
-    this.validate_field();
-  }
-
-  setArea(e: any) {
-    this.area = e.detail.value;
-    this.validate_field();
-  }
-
-  saveCollaborator() {
-    const body = {
-      name: this.name,
-      email: this.email,
-      area: this.area
-    };
-    this.newCollaboratorsService.newCollaborator(this.headers, body).subscribe({
-      next: async (res: any) => {
-        console.log(res)
-        this.load_collaborators();
-      },
-      error: async (_err) => {
-        console.log(_err)
-      }
-    });
-    this.name = '';
-    this.email = '';
-    this.listCollaborators = [];
-    this.validate_field();
-  }
-
-  load_collaborators() {
-    this.listCollaboratorsService.getList(this.headers).subscribe(async (listCollaborators: any) => {
-      let index = 0;
-      this.listCollaborators = await listCollaborators.map((item: any) => {
-        index++;
+  load() {
+    this.accessService.getRequest(this.headers).subscribe(async (request: any) => {
+      this.listRequest = await request.map((item: any) => {
         return {
-          id: index,
+          id: item.id,
           Simple0: item.name,
           Simple1: item.email,
-          Fecha: new Date(item.creation_date).toLocaleDateString(),
-          Simple3: item.name_area,
-          Estado4: { type: item.status === 1 ? 'success' : 'warning', text: item.status === 1 ? 'Activo' : 'Inactivo' },
-          action5: "true"
+          Fecha: new Date(item.assignment_permissions_date).toLocaleDateString(),
+          Simple3: item.description,
+          Simple4: item.name_app,
+          Estado5: { type: item.status_permission === 1 ? 'success' : 'warning', text: item.status_permission === 1 ? 'Activos' : 'Pendientes' },
+          action6: "true"
         };
       });
     });
@@ -99,17 +46,21 @@ export class AccessComponent implements OnInit {
     console.log($event);
     const body = {
       id: $event.detail.data.id,
-      status: $event.detail.data.Estado4.text === 'Activo' ? 2 : 1,
+      status: $event.detail.data.Estado5.text === 'Pendientes' ? 1 : 0,
     }
     console.log(body);
-    this.newCollaboratorsService.updateCollaborator(this.headers, body).subscribe({
+    this.accessService.updateEquipments(this.headers, body).subscribe({
       next: async (res: any) => {
-        console.log(res)
-        this.load_collaborators();
+        console.log(res);
+        this.load();
       },
       error: async (_err) => {
         console.log(_err)
       }
     });
+  }
+
+  saveRequest() {
+
   }
 }

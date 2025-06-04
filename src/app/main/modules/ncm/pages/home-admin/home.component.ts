@@ -49,6 +49,9 @@ export class HomeComponent implements OnInit {
       this.collaboratorFlow = false;
       this.accessFlow = false;
       this.equipmentFlow = true;
+    } else if (e.detail.item.label === menuItems[3].label) {
+      sessionStorage.clear();
+      this.router.navigate(['/']);
     }
   }
 }

@@ -13,6 +13,7 @@ import { ListBoxService } from "./modules/shared/services/list-box/list-box.serv
 import { ListCollaboratorsService } from "./modules/shared/services/list-collaborators/list-collaborators.service";
 import { NewCollaboratorsService } from "./modules/shared/services/new-collaborators/new-collaborators.service";
 import { EquipmentService } from "./modules/shared/services/equipment/equipment.service";
+import { AccessService } from "./modules/shared/services/access/access.service";
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import { EquipmentService } from "./modules/shared/services/equipment/equipment.
     ListBoxService,
     ListCollaboratorsService,
     NewCollaboratorsService,
-    EquipmentService
+    EquipmentService,
+    AccessService
   ]
 })
 export class MainModule {}

@@ -1,5 +1,9 @@
 <div #container id="overlay-root" class="container">
-    <bdb-ml-sidebar items-sidebar='[{ "icon":"ico-home", "label": "Nuevo Colaborador"},
-    { "icon":"ico-padlock-lock", "label": "Solicitud de Accesos"},
-    { "icon":"ico-job", "label": "Asignar Recurso"}]'> </bdb-ml-sidebar>
+    <div *ngIf="accessFlow" class="info">
+        <app-new-access></app-new-access>
+    </div>
+    <div *ngIf="equipmentFlow" class="info">
+        <app-equipment-user></app-equipment-user>
+    </div>
+    <bdb-ml-sidebar (sidebarEmitter)="contentView($event)" [itemsSidebar]="sidebarItems"> </bdb-ml-sidebar>
 </div>
