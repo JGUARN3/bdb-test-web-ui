@@ -4,7 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { LoaderService } from "../../services/loader/loader.service";
 
 @Component({
-  selector: 'error',
+  selector: 'app-error',
   templateUrl: './error.component.html',
   standalone: true,
   styleUrls: [],

@@ -86,11 +86,9 @@ export class NewComponent implements OnInit {
 
   load_collaborators() {
     this.listCollaboratorsService.getList(this.headers).subscribe(async (listCollaborators: any) => {
-      let index = 0;
       this.listCollaborators = await listCollaborators.map((item: any) => {
-        index++;
         return {
-          id: index,
+          id: item.user_id,
           Simple0: item.name,
           Simple1: item.email,
           Fecha: new Date(item.creation_date).toLocaleDateString(),

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { ListBoxService } from "../../shared/services/list-box/list-box.service";
 import { ListCollaboratorsService } from "../../shared/services/list-collaborators/list-collaborators.service";
-import { NewCollaboratorsService } from "../../shared/services/new-collaborators/new-collaborators.service";
 import { EquipmentService } from "../../shared/services/equipment/equipment.service";
 
 
@@ -38,7 +37,6 @@ export class EquipmentComponent implements OnInit {
 
   validate_field() {
     if (this.equipment >= 0 && this.equipment >= 0) {
-      console.log(this.disabled);
       this.disabled = '';
     } else {
       this.disabled = 'FALSE';
@@ -55,7 +53,7 @@ export class EquipmentComponent implements OnInit {
     this.equipmentService.getEquipmentsList(this.headers).subscribe((listEquipments: any) => {
       this.listEquipments = listEquipments.map((item: any) => {
         return {
-          id: item.id,
+          id: item.id_assignment,
           Simple0: item.name,
           Simple1: item.email,
           Simple2: item.name_equipment,
@@ -78,7 +76,7 @@ export class EquipmentComponent implements OnInit {
       equipment: this.equipment,
     };
     this.equipmentService.newCollaborator(this.headers, body).subscribe({
-      next: async (res: any) => {
+      next: async () => {
         this.load_collaborators();
       },
       error: async (_err) => {
@@ -103,7 +101,6 @@ export class EquipmentComponent implements OnInit {
     const body = {
       id: $event.detail.data.id
     }
-    console.log(body);
     this.equipmentService.deleteEquipments(this.headers, body).subscribe({
       next: async (res: any) => {
         console.log(res)

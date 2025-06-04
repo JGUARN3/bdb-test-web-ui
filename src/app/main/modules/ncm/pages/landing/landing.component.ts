@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ViewChild, ElementRef } from "@angular/core";
-import { Store } from "@ngrx/store";
 import { Router } from "@angular/router";
 import { OnInit } from "@angular/core";
 import { LoaderService } from "../../../shared/services/loader/loader.service";
@@ -8,7 +6,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { HostListener } from "@angular/core";
 
 @Component({
-  selector: 'landing-component',
+  selector: 'app-landing-component',
   standalone: true,
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],

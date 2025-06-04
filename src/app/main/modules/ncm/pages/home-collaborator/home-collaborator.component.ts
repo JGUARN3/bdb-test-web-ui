@@ -6,9 +6,6 @@ import { OnInit } from "@angular/core";
 import { LoaderService } from "../../../shared/services/loader/loader.service";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { menuItemsCollaborator } from "../../../../model/sidebar.model";
-import { AccessComponent } from "../../../collaborator/access/access.component";
-import { EquipmentComponent } from "../../../collaborator/equipment/equipment.component";
-import { NewComponent } from "../../../collaborator/new/new.component";
 import { NgIf } from "@angular/common";
 import { NewAccessComponent } from "../../../collaborator/new-access/new-access.component";
 import { EquipmentUserComponent } from "../../../collaborator/equipment-user/equipment-user.component";
@@ -19,9 +16,6 @@ import { EquipmentUserComponent } from "../../../collaborator/equipment-user/equ
   templateUrl: './home-collaborator.component.html',
   styleUrls: ['./home-collaborator.component.scss'],
   imports: [
-    AccessComponent,
-    EquipmentComponent,
-    NewComponent,
     NgIf,
     NewAccessComponent,
     EquipmentUserComponent

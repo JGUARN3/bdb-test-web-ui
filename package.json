@@ -1,6 +1,6 @@
 {
   "name": "bdb-test-web-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "npm run assets && ng serve",
@@ -17,7 +17,7 @@
     "coverage": "npm run assets && ng test --code-coverage --watch false",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
     "preinstall": "npx npm-force-resolutions",
-    "lint": "ng lint",
+    "lint": "ng lint --fix",
     "prettier:list": "prettier --list-different './{libs,src}/**/*.ts' || ECHO .",
     "prettier:write": "prettier --write './{libs,src}/**/*.ts'",
     "prettier": "prettier --check './{libs,src}/**/*.ts'"

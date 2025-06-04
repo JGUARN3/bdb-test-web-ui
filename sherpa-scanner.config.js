@@ -1,7 +1,7 @@
 module.exports = {
-    team: "CDT",
+    team: "NCM",
     branch: "QA",
-    repository: "bbog-ncm-mfe-web-ui",
+    repository: "bdb-test-web-ui",
     framework: "Angular",
     version: "^14.2.9",
     crawlFrom: "./src",

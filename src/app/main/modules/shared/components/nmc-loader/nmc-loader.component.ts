@@ -4,7 +4,7 @@ import { LoaderService } from '../../services/loader/loader.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
-  selector: 'nmc-loader',
+  selector: 'app-nmc-loader',
   templateUrl: './nmc-loader.component.html',
   standalone: true,
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
