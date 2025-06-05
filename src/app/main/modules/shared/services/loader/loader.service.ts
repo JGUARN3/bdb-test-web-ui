@@ -9,10 +9,10 @@ export class LoaderService {
     isLoading = new Subject<any>();
 
     show() {
-        this.isLoading.next();
+        this.isLoading.next(true);
     }
 
     hide() {
-        this.isLoading.next();
+        this.isLoading.next(false);
     }
 }
