@@ -2,8 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NewComponent } from './new.component';
 import { AppModule } from "../../../../app.module";
 import { CommonModule } from "@angular/common";
-import { AccessComponent } from "../access/access.component";
-import { EquipmentComponent } from "../equipment/equipment.component";
 import { ListBoxService } from "../../shared/services/list-box/list-box.service";
 import { HttpClient } from "@angular/common/http";
 import { HttpHandler } from "@angular/common/http";
@@ -21,17 +19,12 @@ describe('NewComponent', () => {
         AppModule
       ],
       providers: [CommonModule,
-        NewComponent,
         ListBoxService,
         HttpClient,
         HttpHandler,
         NewCollaboratorsService,
         ListCollaboratorsService,
         provideMockStore({})],
-    })
-    .compileComponents().then(() => {
-      fixture = TestBed.createComponent(NewComponent);
-      component = fixture.componentInstance;
     });
   }));
 

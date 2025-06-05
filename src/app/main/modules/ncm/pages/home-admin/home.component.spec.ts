@@ -11,6 +11,8 @@ import { HttpClient } from "@angular/common/http";
 import { HttpHandler } from "@angular/common/http";
 import { ListCollaboratorsService } from "../../../shared/services/list-collaborators/list-collaborators.service";
 import { NewCollaboratorsService } from "../../../shared/services/new-collaborators/new-collaborators.service";
+import { AccessService } from "../../../shared/services/access/access.service";
+import { EquipmentService } from "../../../shared/services/equipment/equipment.service";
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -32,6 +34,8 @@ describe('HomeComponent', () => {
         HttpHandler,
         NewCollaboratorsService,
         ListCollaboratorsService,
+        AccessService,
+        EquipmentService,
         provideMockStore({})],
     }).compileComponents();
     fixture = TestBed.createComponent(HomeComponent);
